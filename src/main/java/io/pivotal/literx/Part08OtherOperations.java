@@ -24,7 +24,8 @@ public class Part08OtherOperations {
 
 	// TODO Return the mono which returns its value faster
 	Mono<User> useFastestMono(Mono<User> mono1, Mono<User> mono2) {
-		return null;
+
+		return Mono.first(mono1,mono2);
 	}
 
 //========================================================================================
