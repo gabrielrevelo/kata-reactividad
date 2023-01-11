@@ -24,7 +24,8 @@ public class Part08OtherOperations {
 
 	// TODO Return the mono which returns its value faster
 	Mono<User> useFastestMono(Mono<User> mono1, Mono<User> mono2) {
-		return null;
+
+		return Mono.first(mono1,mono2);
 	}
 
 //========================================================================================
@@ -38,7 +39,8 @@ public class Part08OtherOperations {
 
 	// TODO Convert the input Flux<User> to a Mono<Void> that represents the complete signal of the flux
 	Mono<Void> fluxCompletion(Flux<User> flux) {
-		return null;
+
+		return flux.then();
 	}
 
 //========================================================================================
@@ -52,7 +54,8 @@ public class Part08OtherOperations {
 
 	// TODO Return the same mono passed as input parameter, expect that it will emit User.SKYLER when empty
 	Mono<User> emptyToSkyler(Mono<User> mono) {
-		return null;
+
+		return mono.defaultIfEmpty(User.SKYLER);
 	}
 
 //========================================================================================

@@ -40,8 +40,10 @@ public class Part03StepVerifier {
 //========================================================================================
 
 	// TODO Use StepVerifier to check that the flux parameter emits "foo" and "bar" elements then a RuntimeException error.
-	void expectFooBarError(Flux<String> flux) {
-		fail();
+	void expectFooBarError(Flux<String> flux)  {
+		StepVerifier.create(flux)
+				.expectNext("foo","bar")
+				.verifyError(RuntimeException.class);
 	}
 
 //========================================================================================
@@ -59,7 +61,11 @@ public class Part03StepVerifier {
 
 	// TODO Expect 10 elements then complete and notice how long the test takes.
 	void expect10Elements(Flux<Long> flux) {
-		fail();
+
+		StepVerifier.create(flux)
+				.expectNext(0L,1L,2L,3L,4L,5L,6L,7L,8L,9L)
+				.verifyComplete()
+				.getSeconds();
 	}
 
 //========================================================================================
