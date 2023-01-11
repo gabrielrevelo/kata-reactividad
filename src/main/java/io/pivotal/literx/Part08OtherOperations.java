@@ -17,7 +17,8 @@ public class Part08OtherOperations {
 
 	// TODO Create a Flux of user from Flux of username, firstname and lastname.
 	Flux<User> userFluxFromStringFlux(Flux<String> usernameFlux, Flux<String> firstnameFlux, Flux<String> lastnameFlux) {
-		return null;
+		return Flux.zip(usernameFlux, firstnameFlux, lastnameFlux)
+				.map(tup -> new User(tup.getT1(), tup.getT2(), tup.getT3()));
 	}
 
 //========================================================================================
@@ -32,7 +33,7 @@ public class Part08OtherOperations {
 
 	// TODO Return the flux which returns the first value faster
 	Flux<User> useFastestFlux(Flux<User> flux1, Flux<User> flux2) {
-		return null;
+		return Flux.first(flux1, flux2);
 	}
 
 //========================================================================================
@@ -47,7 +48,7 @@ public class Part08OtherOperations {
 
 	// TODO Return a valid Mono of user for null input and non null input user (hint: Reactive Streams do not accept null values)
 	Mono<User> nullAwareUserToMono(User user) {
-		return null;
+		return Mono.justOrEmpty(user);
 	}
 
 //========================================================================================
@@ -62,7 +63,7 @@ public class Part08OtherOperations {
 
 	// TODO Convert the input Flux<User> to a Mono<List<User>> containing list of collected flux values
 	Mono<List<User>> fluxCollection(Flux<User> flux) {
-		return null;
+		return flux.collectList();
 	}
 
 }

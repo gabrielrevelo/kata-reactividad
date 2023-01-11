@@ -13,9 +13,10 @@ Principales clases a utilizar:
 Tecnologías utilizadas:
 
  -  [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 
-<image src="https://www.opencodez.com/wp-content/uploads/2018/02/Java-8-using-Examples.png" alt="Descripción de la imagen">
- -  IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-    <image src="https://pbs.twimg.com/profile_images/1206618215767584769/zl48EuhC_400x400.jpg" alt="Descripción de la imagen">
+ <image src="https://www.opencodez.com/wp-content/uploads/2018/02/Java-8-using-Examples.png" alt="Java 8" height="200">
+ 
+ -  IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea/) 
+ <image src="https://pbs.twimg.com/profile_images/1206618215767584769/zl48EuhC_400x400.jpg" alt="IntelliJ IDEA" height="200">
 
 
 

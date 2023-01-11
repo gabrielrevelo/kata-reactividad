@@ -2,6 +2,9 @@ package io.pivotal.literx;
 
 import reactor.core.publisher.Flux;
 
+import java.time.Duration;
+import java.util.Arrays;
+
 /**
  * Learn how to create Flux instances.
  *
@@ -14,7 +17,7 @@ public class Part01Flux {
 
 	// TODO Return an empty Flux
 	Flux<String> emptyFlux() {
-		return null;
+		return Flux.empty();
 	}
 
 //========================================================================================
@@ -28,7 +31,7 @@ public class Part01Flux {
 
 	// TODO Create a Flux from a List that contains 2 values "foo" and "bar"
 	Flux<String> fooBarFluxFromList() {
-		return null;
+		return Flux.fromIterable(Arrays.asList("foo", "bar"));
 	}
 
 //========================================================================================
@@ -42,7 +45,7 @@ public class Part01Flux {
 
 		// TODO Create a Flux that emits increasing values from 0 to 9 each 100ms
 	Flux<Long> counter() {
-		return null;
+		return Flux.interval(Duration.ofMillis(10)).take(10);
 	}
 
 }
